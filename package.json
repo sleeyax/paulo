@@ -1,0 +1,25 @@
+{
+  "name": "paulo",
+  "version": "0.0.1",
+  "description": "Paulo bot for the StremioAddons discord",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "node build/index.js",
+    "serve:watch": "nodemon build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sleeyax",
+  "license": "MIT",
+  "dependencies": {
+    "command.ts": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^14.14.8",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.6"
+  }
+}
