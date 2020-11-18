@@ -1,12 +1,12 @@
-import { Commands, Context, Group } from "command.ts";
+import { Commands, Context, Describe, Group } from "command.ts";
 
-@Group("commands for testing")
+@Group("testing")
 export default class PingPongCommand {
-    ping(ctx: Context) {
-        ctx.send("pong!");
-    }
+  ping(ctx: Context) {
+    ctx.send("pong!");
+  }
 
-    pong(ctx: Context) {
-        ctx.send("ping!");
-    }
+  pong(ctx: Context) {
+    ctx.send("ping!");
+  }
 }
