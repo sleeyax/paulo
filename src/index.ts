@@ -1,6 +1,6 @@
 import { Client } from 'command.ts';
 import { join } from 'path';
-import {config} from 'dotenv';
+import { config } from 'dotenv';
 
 config();
 
@@ -13,7 +13,7 @@ async function bootstrap() {
   try {
     await client.login(process.env.DISCORD_TOKEN);
     console.log(`Bot started successfully on ${new Date()}`);
-  } catch(err) {
+  } catch (err) {
     console.error(err);
   }
 }

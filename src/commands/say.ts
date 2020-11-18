@@ -12,7 +12,7 @@ export default class SayCommand {
 
   @Describe({
     aliases: ['whisper'],
-    description: 'Make Paulo say something, but without tagging anyone'
+    description: 'Make Paulo say something, but without tagging anyone',
   })
   sayClean(ctx: Context) {
     ctx.send(ctx.cleanContent.replace(`${ctx.usedPrefix}${ctx.usedAlias}`, ''));
