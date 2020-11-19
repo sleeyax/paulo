@@ -4,7 +4,7 @@ import { join } from 'path';
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 const client = new Client({
-  prefixes: [process.env.DISCORD_PREFIX || '!'],
+  prefixes: [process.env.DISCORD_PREFIX],
   loadDirs: [join(__dirname, '/commands'), join(__dirname, '/events')],
 });
 

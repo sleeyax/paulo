@@ -3,13 +3,13 @@ import { TextChannel } from 'discord.js';
 import { formatInvalidCommand, getMsg } from '../helpers';
 import { ArgsRequired, NoDm } from '../middleware';
 
-@Group('fun')
+@Group('Funny')
 @NoDm
 @ArgsRequired
 export default class SayCommand {
   @Describe({
     aliases: ['talk'],
-    description: 'Make Paulo say something.',
+    description: 'make the bot say something.',
   })
   say(ctx: Context) {
     ctx.send(getMsg(ctx));
@@ -17,7 +17,8 @@ export default class SayCommand {
 
   @Describe({
     aliases: ['whisper'],
-    description: 'Make Paulo say something, but without tagging anyone',
+    description:
+      'make the bot say something, but without tagging people or channels',
   })
   sayClean(ctx: Context) {
     ctx.send(getMsg(ctx, { clean: true }));
@@ -25,12 +26,14 @@ export default class SayCommand {
 
   @Describe({
     aliases: ['sayin'],
-    description: 'Make Paulo say something in a specific channel',
-    usage: 'say <channel id> <msg>',
+    description: 'make the bot say something in a specific channel',
+    usage: '<channel> your message here',
   })
   async sayIn(
     ctx: Context,
-    @Args.Channel('channel where your message should be sent to')
+    @Args.Channel(
+      'name of the text channel where your message should be sent to',
+    )
     channel: TextChannel,
   ) {
     if (!channel)
