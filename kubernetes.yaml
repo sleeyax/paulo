@@ -19,3 +19,14 @@ spec:
       containers:
       - name: paulo
         image: sleeyax/paulo:0.0.2
+        env:
+        - name: DISCORD_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: paulosecrets
+              key: token
+        - name: DISCORD_PREFIX
+          valueFrom:
+            secretKeyRef:
+              name: paulosecrets
+              key: prefix
