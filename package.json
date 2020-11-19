@@ -1,6 +1,6 @@
 {
   "name": "paulo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Paulo bot for the StremioAddons discord",
   "main": "build/index.js",
   "scripts": {
