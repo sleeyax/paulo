@@ -1,8 +1,7 @@
 import { Client } from 'command.ts';
 import { join } from 'path';
-import { config } from 'dotenv';
 
-config();
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 const client = new Client({
   prefixes: [process.env.DISCORD_PREFIX || '!'],

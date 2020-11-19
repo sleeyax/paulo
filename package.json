@@ -7,6 +7,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "build": "tsc",
     "build:watch": "tsc --watch",
+    "dist": "rimraf dist && tsc --build tsconfig.production.json",
     "serve": "node build/index.js",
     "serve:watch": "nodemon build/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,6 +27,7 @@
     "lint-staged": "^10.5.1",
     "nodemon": "^2.0.6",
     "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
     "typescript": "^4.0.5"
   },
   "husky": {
