@@ -12,9 +12,13 @@ WORKDIR /app
 
 COPY package.json .
 COPY package-lock.json .
+COPY tsconfig.json .
+COPY tsconfig.production.json .
 
-RUN npm i --production
+RUN npm i --production && npm cache clean --force
 
-COPY dist/ ./dist/
+COPY src/ ./src/
+RUN npm run dist
+RUN rm -rf src/
 
 ENTRYPOINT ["node", "dist/index.js"]

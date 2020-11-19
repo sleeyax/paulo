@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paulo
+  labels:
+    app: paulo
+    type: stremio-bot
+  namespace: stremio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paulo
+  template:
+    metadata:
+      labels:
+        app: paulo
+    spec:
+      containers:
+      - name: paulo
+        image: sleeyax/paulo:0.0.2
