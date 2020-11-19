@@ -7,5 +7,6 @@ export default class HelpCommand {
   help(ctx: Context) {
     const commnadGroups = Commands.groups;
     const commands = Commands.store;
+    // TODO: show help
   }
 }
