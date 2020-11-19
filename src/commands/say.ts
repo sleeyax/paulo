@@ -1,18 +1,17 @@
 import { Args, Context, Describe, Group } from 'command.ts';
 import { TextChannel } from 'discord.js';
 import { formatInvalidCommand, getMsg } from '../helpers';
-import { NoDm } from '../middleware';
+import { ArgsRequired, NoDm } from '../middleware';
 
 @Group('fun')
 @NoDm
+@ArgsRequired
 export default class SayCommand {
   @Describe({
     aliases: ['talk'],
     description: 'Make Paulo say something.',
   })
   say(ctx: Context) {
-    if (ctx.args.length === 0)
-      return ctx.send(formatInvalidCommand('Missing parameters.'));
     ctx.send(getMsg(ctx));
   }
 
@@ -21,8 +20,6 @@ export default class SayCommand {
     description: 'Make Paulo say something, but without tagging anyone',
   })
   sayClean(ctx: Context) {
-    if (ctx.args.length === 0)
-      return ctx.send(formatInvalidCommand('Missing parameters.'));
     ctx.send(getMsg(ctx, { clean: true }));
   }
 
@@ -36,9 +33,9 @@ export default class SayCommand {
     @Args.Channel('channel where your message should be sent to')
     channel: TextChannel,
   ) {
-    if (ctx.args.length === 0 || !channel)
+    if (!channel)
       return ctx.send(
-        formatInvalidCommand('Missing parameters. Required: `channel`, `msg`.'),
+        formatInvalidCommand('Missing arguments. Required: `channel`, `msg`.'),
       );
 
     const chan = await ctx.client.channels.cache.get(channel.id).fetch();
