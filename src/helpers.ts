@@ -1,4 +1,6 @@
 import { Context } from 'command.ts';
+import { MessageEmbed } from 'discord.js';
+const { version } = require('../package');
 
 /**
  * get message contents without prefix, command & arguments
@@ -28,6 +30,17 @@ export function formatInvalidCommand(msg: string) {
   return `*${msg}*`;
 }
 
-export function formatApiError(msg: string) {
-  return `**DISCORD API ERROR: ${msg}**`;
+export function formatUnexpectedError(msg: string) {
+  return `**${msg}**`;
 }
+
+export function getEmbed() {
+  return new MessageEmbed()
+    .setColor('#634179;')
+    .setTitle('Paulo Bot')
+    .setDescription('List of addons currently available in the catalog:')
+    .setFooter(`v${version}`)
+    .setURL('https://github.com/sleeyax/paulo');
+}
+
+export const DISCORD_EMBED_FIELD_LIMIT = 25;

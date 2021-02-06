@@ -2,6 +2,7 @@ import { Context, Describe, Group } from 'command.ts';
 
 import { Commands } from 'command.ts';
 import { MessageEmbed } from 'discord.js';
+import { getEmbed } from '../helpers';
 
 const { version } = require('../../package.json');
 
@@ -13,12 +14,7 @@ export default class HelpCommand {
   help(ctx: Context) {
     const commandGroups = Commands.groups;
 
-    const embed = new MessageEmbed()
-      .setColor('#634179;')
-      .setTitle('Paulo Bot')
-      .setDescription('List of available commands:')
-      .setFooter(`v${version}`)
-      .setURL('https://github.com/sleeyax/paulo');
+    const embed = getEmbed();
 
     for (const group of commandGroups) {
       const commands = Commands.store.filter((c) => c.group === group);
