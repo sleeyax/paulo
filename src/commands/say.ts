@@ -79,7 +79,7 @@ export default class SayCommand {
   })
   whoru(ctx: Context) {
     ctx.send(
-      'I am a **Lead Customer Success Engineer** from Zeit.co (now known as Vercel) who bannned all Stremio addons from the service for no apparant reason. I also did nothing at all to resolve the situation, so now I will be remmebered as a bot here!',
+      'I am a **Lead Customer Success Engineer** from Vercel (former Zeit.co) who bannned all Stremio addons from the service with no prior notice or given reason. I also did nothing at all to resolve the situation. Now my legacy lives on in this discord server as I will be remembered as a bot to do any kinds of chores r/StremioAddons demands from me!',
     );
   }
 }

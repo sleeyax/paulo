@@ -1,10 +1,6 @@
 import { Context, Describe, Group } from 'command.ts';
-
 import { Commands } from 'command.ts';
-import { MessageEmbed } from 'discord.js';
 import { getEmbed } from '../helpers';
-
-const { version } = require('../../package.json');
 
 @Group('Help')
 export default class HelpCommand {

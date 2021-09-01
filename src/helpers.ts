@@ -38,7 +38,6 @@ export function getEmbed() {
   return new MessageEmbed()
     .setColor('#634179;')
     .setTitle('Paulo Bot')
-    .setDescription('List of addons currently available in the catalog:')
     .setFooter(`v${version}`)
     .setURL('https://github.com/sleeyax/paulo');
 }
