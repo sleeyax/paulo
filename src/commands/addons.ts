@@ -105,8 +105,9 @@ export default class AddonCommand {
         return ctx.send(formatInvalidCommand('Addon with given ID not found!'));
       const { manifest } = addon;
       const embed = getEmbed();
-      embed.setTitle(manifest.name ?? '');
-      embed.addField('Description', manifest.description ?? '');
+      if (manifest.name) embed.setTitle(manifest.name);
+      if (manifest.description)
+        embed.addField('Description', manifest.description);
       if (manifest.types) embed.addField('Types', manifest.types.join(', '));
       if (manifest.catalogs)
         embed.addField(
@@ -116,7 +117,7 @@ export default class AddonCommand {
       if (manifest.background) embed.setImage(manifest.background);
       if (manifest.logo) embed.setThumbnail(manifest.logo);
       if (addon.transportUrl) embed.setURL(addon.transportUrl);
-      embed.setFooter('v' + manifest.version);
+      if (manifest.version) embed.setFooter('v' + manifest.version);
       ctx.send({ embed });
     } catch (err) {
       console.error(err);
