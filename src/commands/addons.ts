@@ -78,10 +78,17 @@ export default class AddonCommand {
       const addon = addons.find((addon) => addon.manifest.id === id);
       if (!addon)
         return ctx.send(formatInvalidCommand('Addon with given ID not found!'));
-      ctx.send({
-        code: true,
-        content: JSON.stringify(addon.manifest, null, 2),
-      });
+
+      const stringManifest = JSON.stringify(addon.manifest, null, 2);
+      const maxLength = 1990;
+
+      for (let i = 0; i < stringManifest.length; i += maxLength) {
+        const chunk = stringManifest.slice(i, (i + 1) * maxLength);
+        ctx.send({
+          code: true,
+          content: chunk,
+        });
+      }
     } catch (err) {
       console.error(err);
       ctx.send(formatUnexpectedError('Sorry, something went wrong'));
