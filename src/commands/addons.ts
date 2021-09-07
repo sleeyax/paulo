@@ -50,9 +50,10 @@ export default class AddonCommand {
     try {
       let addons = await new AddonWatcher().getAddonsList();
       addons = addons.filter(
-        (addon) =>
-          addon.manifest.name.toLowerCase().indexOf(query.toLowerCase()) > -1 ||
-          addon.manifest.id.toLowerCase().includes(query.toLowerCase()),
+        ({ manifest }) =>
+          manifest.name.toLowerCase().indexOf(query.toLowerCase()) > -1 ||
+          (manifest.description &&
+            manifest.description.toLowerCase().includes(query.toLowerCase())),
       );
 
       if (addons.length === 0)
