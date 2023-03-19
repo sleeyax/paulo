@@ -1,4 +1,4 @@
-FROM node:15.2.1-alpine3.12
+FROM node:16-alpine
 
 LABEL author=Sleeyax
 LABEL description="docker container image to run the r/StremioAddons discord bot"
