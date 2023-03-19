@@ -1,7 +1,7 @@
 {
   "name": "paulo",
   "version": "0.0.7",
-  "description": "Paulo bot for the StremioAddons discord",
+  "description": "Discord bot for the r/StremioAddons community server",
   "main": "build/index.js",
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\"",
