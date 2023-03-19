@@ -24,9 +24,9 @@ spec:
           valueFrom:
             secretKeyRef:
               name: paulosecrets
-              key: token
-        - name: DISCORD_PREFIX
+              key: DISCORD_TOKEN
+        - name: DISCORD_APP_ID
           valueFrom:
             secretKeyRef:
               name: paulosecrets
-              key: prefix
+              key: DISCORD_APP_ID
