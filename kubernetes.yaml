@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: paulo
-        image: sleeyax/paulo:v0.0.7
+        image: sleeyax/paulo:v0.1.0
         env:
         - name: DISCORD_TOKEN
           valueFrom:
