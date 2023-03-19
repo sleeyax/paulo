@@ -2,7 +2,7 @@ import { config as configEnv } from 'dotenv';
 import { Client, GatewayIntentBits, REST, Routes } from 'discord.js';
 import commands, { commandMap } from './commands';
 
-if (process.env.NODE_ENV !== 'production') configEnv();
+configEnv();
 
 const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
 

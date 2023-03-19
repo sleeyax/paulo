@@ -3,7 +3,6 @@ FROM node:16-alpine
 LABEL author=Sleeyax
 LABEL description="docker container image to run the r/StremioAddons discord bot"
 
-ENV NODE_ENV=production
 ENV DISCORD_TOKEN=
 ENV DISCORD_APP_ID=
 
