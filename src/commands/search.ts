@@ -48,11 +48,11 @@ export async function searchCommandImpl(
       ]);
       // if we reach the limit or last item in the list, send the embed
       if (
-        (i > 0 && i % DISCORD_EMBED_FIELD_LIMIT === 0) ||
+        (i > 0 && (i + 1) % DISCORD_EMBED_FIELD_LIMIT === 0) ||
         i === addons.length - 1
       ) {
         await interaction.reply({ embeds: [embed] });
-        embed = formatEmbedBase();
+        return;
       }
     }
   } catch (err) {
