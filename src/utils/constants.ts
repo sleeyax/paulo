@@ -1,0 +1,1 @@
+export const DISCORD_EMBED_FIELD_LIMIT = 25;
